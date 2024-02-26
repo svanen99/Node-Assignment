@@ -1,11 +1,8 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
-const express = require('express');
+const PORT = 3000;
 
-const app = express();
-
-app.use(express.static(path.join(__dirname, 'img')));
 
 const server = http.createServer((req, res) => {
     if (req.url.includes("/css/") || req.url.includes("/html/")) {
@@ -91,7 +88,7 @@ const server = http.createServer((req, res) => {
     }
 });
 
-const PORT = 5000
+
 server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
